@@ -10,6 +10,8 @@
             --text-color: #212529;
             --card-bg: #ffffff;
             --card-shadow: rgba(0, 0, 0, 0.1);
+            --primary-color: #4285f4;
+            --primary-hover: #3367d6;
         }
 
         .dark-mode {
@@ -17,6 +19,8 @@
             --text-color: #e0e0e0;
             --card-bg: #1e1e1e;
             --card-shadow: rgba(0, 0, 0, 0.3);
+            --primary-color: #5c9aff;
+            --primary-hover: #7baeff;
         }
 
         body {
@@ -91,13 +95,34 @@
         }
 
         .contact-link:hover {
-            color: #4285f4;
+            color: var(--primary-color);
         }
 
         .toggle-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem;
+        }
+
+        .home-button {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .home-icon {
+            margin-right: 6px;
         }
 
         .toggle-switch {
@@ -138,7 +163,7 @@
         }
 
         input:checked + .slider {
-            background-color: #4285f4;
+            background-color: var(--primary-color);
         }
 
         input:checked + .slider:before {
@@ -163,6 +188,10 @@
 </head>
 <body>
     <div class="toggle-container">
+        <a href="https://rebienald.github.io/Portfolio/" class="home-button">
+            <span class="home-icon">🏠</span>
+            Home
+        </a>
         <label class="toggle-switch">
             <input type="checkbox" id="darkModeToggle">
             <span class="slider"></span>
